@@ -1,12 +1,17 @@
 [gd_scene format=3 uid="uid://6apofyulx41d"]
 
-[node name="Setttings" type="Control" unique_id=366049347]
+[ext_resource type="Script" uid="uid://dw0kgujospif6" path="res://src/ui/difficulty_label.gd" id="1_ce0xg"]
+[ext_resource type="Script" uid="uid://exj6e0kef6un" path="res://src/ui/settings.gd" id="1_jdtyy"]
+
+[node name="Setttings" type="Control" unique_id=1883133672]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jdtyy")
+metadata/_custom_type_script = "uid://exj6e0kef6un"
 
 [node name="Backdrop" type="Panel" parent="." unique_id=148997938]
 layout_mode = 1
@@ -69,6 +74,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Normal"
 horizontal_alignment = 1
+script = ExtResource("1_ce0xg")
 
 [node name="MasterVolume" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=2124092197]
 layout_mode = 2
@@ -118,3 +124,5 @@ alignment = 1
 [node name="CloseButton" type="Button" parent="Backdrop/OuterContainer/OuterControls" unique_id=466357868]
 layout_mode = 2
 text = "Finish and Close"
+
+[connection signal="value_changed" from="Backdrop/OuterContainer/SettingControls/Difficulty/HSlider" to="Backdrop/OuterContainer/SettingControls/Difficulty/Value" method="update_label_text"]
