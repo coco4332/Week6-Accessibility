@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6apofyulx41d"]
 
 [ext_resource type="Script" uid="uid://dw0kgujospif6" path="res://src/ui/difficulty_label.gd" id="1_ce0xg"]
+[ext_resource type="Script" uid="uid://exj6e0kef6un" path="res://src/ui/settings.gd" id="1_jdtyy"]
 [ext_resource type="Script" uid="uid://cy0mxu1j2a6cx" path="res://src/ui/submenu_button.gd" id="3_6kawi"]
 [ext_resource type="Script" uid="uid://cq2qi7hiksda6" path="res://src/ui/menu.gd" id="3_tr161"]
 
@@ -12,7 +13,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Main" type="Control" parent="." unique_id=1588480016 node_paths=PackedStringArray("close_button")]
+[node name="Main" type="Control" parent="." unique_id=824564387 node_paths=PackedStringArray("difficulty_slider", "master_vol_slider", "music_vol_slider", "close_button")]
 layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -22,9 +23,12 @@ offset_right = -276.0
 offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("3_tr161")
+script = ExtResource("1_jdtyy")
+difficulty_slider = NodePath("Backdrop/OuterContainer/SettingControls/Difficulty/HSlider")
+master_vol_slider = NodePath("Backdrop/OuterContainer/SettingControls/MasterVolume/HSlider")
+music_vol_slider = NodePath("Backdrop/OuterContainer/SettingControls/MusicVolume/HSlider")
 close_button = NodePath("Backdrop/OuterContainer/OuterControls/CloseButton")
-metadata/_custom_type_script = "uid://cq2qi7hiksda6"
+metadata/_custom_type_script = "uid://exj6e0kef6un"
 
 [node name="Backdrop" type="Panel" parent="Main" unique_id=148997938]
 layout_mode = 1

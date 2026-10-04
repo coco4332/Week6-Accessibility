@@ -6,6 +6,7 @@ extends Menu
 @export var music_vol_slider: HSlider = null
 
 func _ready() -> void:
+	super._ready()
 	difficulty_slider.value_changed.connect(update_difficulty.unbind(1))
 	master_vol_slider.value_changed.connect(update_master_volume.unbind(1))
 	music_vol_slider.value_changed.connect(update_music_volume.unbind(1))
