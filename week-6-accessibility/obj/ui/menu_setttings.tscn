@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://6apofyulx41d"]
+
+[node name="Setttings" type="Control" unique_id=366049347]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backdrop" type="Panel" parent="." unique_id=148997938]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OuterContainer" type="VBoxContainer" parent="Backdrop" unique_id=94434884]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="Backdrop/OuterContainer" unique_id=775895259]
+layout_mode = 2
+text = "Settings"
+
+[node name="SettingControls" type="VBoxContainer" parent="Backdrop/OuterContainer" unique_id=1700156658]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="Difficulty" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=492608682]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=839336642]
+layout_mode = 2
+text = "Difficulty"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=1585344284]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+min_value = 1.0
+max_value = 3.0
+value = 2.0
+scrollable = false
+tick_count = 3
+ticks_on_borders = true
+
+[node name="Value" type="Label" parent="Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=1705939219]
+modulate = Color(1, 1, 1, 0.5019608)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Normal"
+horizontal_alignment = 1
+
+[node name="MasterVolume" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=2124092197]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Backdrop/OuterContainer/SettingControls/MasterVolume" unique_id=1950003330]
+layout_mode = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Backdrop/OuterContainer/SettingControls/MasterVolume" unique_id=853218474]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+
+[node name="MusicVolume" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=934461113]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Backdrop/OuterContainer/SettingControls/MusicVolume" unique_id=1739875180]
+layout_mode = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Backdrop/OuterContainer/SettingControls/MusicVolume" unique_id=143613043]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+
+[node name="InputBindings" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=1924781074]
+layout_mode = 2
+
+[node name="EditInput" type="Button" parent="Backdrop/OuterContainer/SettingControls/InputBindings" unique_id=1530614421]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Edit Input Bindings"
+
+[node name="OuterControls" type="HBoxContainer" parent="Backdrop/OuterContainer" unique_id=1691904270]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="Backdrop/OuterContainer/OuterControls" unique_id=466357868]
+layout_mode = 2
+text = "Finish and Close"
