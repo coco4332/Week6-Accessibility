@@ -1,11 +1,11 @@
 class_name DifficultyLabel
 extends Label
 
-func update_label_text(difficulty: GameManager.Difficulty) -> void:
+func update_label_text(difficulty: Game.Difficulty) -> void:
 	match difficulty:
-		GameManager.Difficulty.EASY:
+		Game.Difficulty.EASY:
 			text = "Easy"
-		GameManager.Difficulty.NORMAL:
+		Game.Difficulty.NORMAL:
 			text = "Normal"
-		GameManager.Difficulty.HARD:
+		Game.Difficulty.HARD:
 			text = "Hard"

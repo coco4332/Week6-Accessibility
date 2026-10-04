@@ -17,6 +17,7 @@ func _ready() -> void:
 func previous_menu() -> void:
 	close()
 	if parent_menu:
+		Game.audio_menu_select()
 		parent_menu.open()
 
 func open() -> void:

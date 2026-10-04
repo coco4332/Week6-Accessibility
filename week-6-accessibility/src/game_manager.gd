@@ -1,4 +1,7 @@
+class_name GameManager
 extends Node
+
+static var instance: GameManager = null
 
 enum Difficulty {
 	EASY = 1,
@@ -36,10 +39,13 @@ var music_volume: float:
 			_music_volume = val
 			music_volume_changed.emit(val)
 
+func _init() -> void: instance = self
+
 func _ready() -> void:
 	_ui_audio_player = AudioStreamPlayer.new()
 	add_child(_ui_audio_player)
 	
+	difficulty_changed.connect(_on_difficulty_changed)
 	master_volume_changed.connect(_on_master_volume_changed)
 	music_volume_changed.connect(_on_music_volume_changed)
 	
@@ -47,12 +53,15 @@ func _ready() -> void:
 	master_volume_changed.emit(_master_volume)
 	music_volume_changed.emit(_music_volume)
 
+func _on_difficulty_changed(val: Difficulty) -> void:
+	Game.audio_menu_tick()
+
 func _on_master_volume_changed(val: float):
-	print(_ui_audio_player.volume_linear)
+	Game.audio_menu_tick()
 	_ui_audio_player.volume_linear = val
 
 func _on_music_volume_changed(val: float):
-	pass
+	Game.audio_menu_tick()
 
 func audio_menu_tick() -> void:
 	_ui_audio_player.stop()

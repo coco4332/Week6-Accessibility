@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b7o0wwjoabwbf"]
+
+[ext_resource type="Script" uid="uid://f71evufhsjyr" path="res://src/game_manager.gd" id="1_y5a5f"]
+[ext_resource type="AudioStream" uid="uid://b6qg5g87i32o2" path="res://content/sfx/hover.wav" id="2_6d1hs"]
+[ext_resource type="AudioStream" uid="uid://k0rcjk43yexk" path="res://content/sfx/select.wav" id="3_f3wxv"]
+
+[node name="Game" type="Node" unique_id=1599485242]
+script = ExtResource("1_y5a5f")
+_sfx_ui_tick = ExtResource("2_6d1hs")
+_sfx_ui_select = ExtResource("3_f3wxv")
+metadata/_custom_type_script = "uid://f71evufhsjyr"
