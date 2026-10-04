@@ -1,36 +1,40 @@
 [gd_scene format=3 uid="uid://6apofyulx41d"]
 
 [ext_resource type="Script" uid="uid://dw0kgujospif6" path="res://src/ui/difficulty_label.gd" id="1_ce0xg"]
-[ext_resource type="Script" uid="uid://exj6e0kef6un" path="res://src/ui/settings.gd" id="1_jdtyy"]
+[ext_resource type="Script" uid="uid://cy0mxu1j2a6cx" path="res://src/ui/submenu_button.gd" id="3_6kawi"]
+[ext_resource type="Script" uid="uid://cq2qi7hiksda6" path="res://src/ui/menu.gd" id="3_tr161"]
 
-[node name="Setttings" type="Control" unique_id=1883133672 node_paths=PackedStringArray("difficulty_slider", "master_vol_slider", "music_vol_slider")]
+[node name="Setttings" type="Control" unique_id=669599504]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_jdtyy")
-difficulty_slider = NodePath("Backdrop/OuterContainer/SettingControls/Difficulty/HSlider")
-master_vol_slider = NodePath("Backdrop/OuterContainer/SettingControls/MasterVolume/HSlider")
-music_vol_slider = NodePath("Backdrop/OuterContainer/SettingControls/MusicVolume/HSlider")
-metadata/_custom_type_script = "uid://exj6e0kef6un"
 
-[node name="Backdrop" type="Panel" parent="." unique_id=148997938]
+[node name="Main" type="Control" parent="." unique_id=1588480016 node_paths=PackedStringArray("close_button")]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 276.0
+offset_top = 24.0
+offset_right = -276.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_tr161")
+close_button = NodePath("Backdrop/OuterContainer/OuterControls/CloseButton")
+metadata/_custom_type_script = "uid://cq2qi7hiksda6"
+
+[node name="Backdrop" type="Panel" parent="Main" unique_id=148997938]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OuterContainer" type="VBoxContainer" parent="Backdrop" unique_id=94434884]
+[node name="OuterContainer" type="VBoxContainer" parent="Main/Backdrop" unique_id=94434884]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -43,24 +47,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 
-[node name="Label" type="Label" parent="Backdrop/OuterContainer" unique_id=775895259]
+[node name="Label" type="Label" parent="Main/Backdrop/OuterContainer" unique_id=775895259]
 layout_mode = 2
 text = "Settings"
 
-[node name="SettingControls" type="VBoxContainer" parent="Backdrop/OuterContainer" unique_id=1700156658]
+[node name="SettingControls" type="VBoxContainer" parent="Main/Backdrop/OuterContainer" unique_id=1700156658]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/separation = 40
 
-[node name="Difficulty" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=492608682]
+[node name="Difficulty" type="VBoxContainer" parent="Main/Backdrop/OuterContainer/SettingControls" unique_id=492608682]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=839336642]
+[node name="Label" type="Label" parent="Main/Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=839336642]
 layout_mode = 2
 text = "Difficulty"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=1585344284]
+[node name="HSlider" type="HSlider" parent="Main/Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=1585344284]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -71,7 +75,7 @@ scrollable = false
 tick_count = 3
 ticks_on_borders = true
 
-[node name="Value" type="Label" parent="Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=1705939219]
+[node name="Value" type="Label" parent="Main/Backdrop/OuterContainer/SettingControls/Difficulty" unique_id=1705939219]
 modulate = Color(1, 1, 1, 0.5019608)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
@@ -79,15 +83,15 @@ text = "Normal"
 horizontal_alignment = 1
 script = ExtResource("1_ce0xg")
 
-[node name="MasterVolume" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=2124092197]
+[node name="MasterVolume" type="VBoxContainer" parent="Main/Backdrop/OuterContainer/SettingControls" unique_id=2124092197]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Backdrop/OuterContainer/SettingControls/MasterVolume" unique_id=1950003330]
+[node name="Label" type="Label" parent="Main/Backdrop/OuterContainer/SettingControls/MasterVolume" unique_id=1950003330]
 layout_mode = 2
 text = "Master Volume"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Backdrop/OuterContainer/SettingControls/MasterVolume" unique_id=853218474]
+[node name="HSlider" type="HSlider" parent="Main/Backdrop/OuterContainer/SettingControls/MasterVolume" unique_id=853218474]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -95,15 +99,15 @@ max_value = 1.0
 step = 0.0
 value = 1.0
 
-[node name="MusicVolume" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=934461113]
+[node name="MusicVolume" type="VBoxContainer" parent="Main/Backdrop/OuterContainer/SettingControls" unique_id=934461113]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Backdrop/OuterContainer/SettingControls/MusicVolume" unique_id=1739875180]
+[node name="Label" type="Label" parent="Main/Backdrop/OuterContainer/SettingControls/MusicVolume" unique_id=1739875180]
 layout_mode = 2
 text = "Music Volume"
 horizontal_alignment = 1
 
-[node name="HSlider" type="HSlider" parent="Backdrop/OuterContainer/SettingControls/MusicVolume" unique_id=143613043]
+[node name="HSlider" type="HSlider" parent="Main/Backdrop/OuterContainer/SettingControls/MusicVolume" unique_id=143613043]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -111,21 +115,107 @@ max_value = 1.0
 step = 0.0
 value = 1.0
 
-[node name="InputBindings" type="VBoxContainer" parent="Backdrop/OuterContainer/SettingControls" unique_id=1924781074]
+[node name="InputBindings" type="VBoxContainer" parent="Main/Backdrop/OuterContainer/SettingControls" unique_id=1924781074]
 layout_mode = 2
 
-[node name="EditInput" type="Button" parent="Backdrop/OuterContainer/SettingControls/InputBindings" unique_id=1530614421]
+[node name="EditInput" type="Button" parent="Main/Backdrop/OuterContainer/SettingControls/InputBindings" unique_id=1192203077 node_paths=PackedStringArray("parent_menu", "submenu")]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 text = "Edit Input Bindings"
+script = ExtResource("3_6kawi")
+parent_menu = NodePath("../../../../..")
+submenu = NodePath("../../../../../../InputBindings")
+metadata/_custom_type_script = "uid://cy0mxu1j2a6cx"
 
-[node name="OuterControls" type="HBoxContainer" parent="Backdrop/OuterContainer" unique_id=1691904270]
+[node name="OuterControls" type="HBoxContainer" parent="Main/Backdrop/OuterContainer" unique_id=1691904270]
 layout_mode = 2
 alignment = 1
 
-[node name="CloseButton" type="Button" parent="Backdrop/OuterContainer/OuterControls" unique_id=466357868]
+[node name="CloseButton" type="Button" parent="Main/Backdrop/OuterContainer/OuterControls" unique_id=1898137099]
 layout_mode = 2
 text = "Finish and Close"
 
-[connection signal="value_changed" from="Backdrop/OuterContainer/SettingControls/Difficulty/HSlider" to="Backdrop/OuterContainer/SettingControls/Difficulty/Value" method="update_label_text"]
+[node name="InputBindings" type="Control" parent="." unique_id=110441634 node_paths=PackedStringArray("close_button")]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 350.0
+offset_top = 40.0
+offset_right = -350.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_tr161")
+close_on_start = true
+close_button = NodePath("Panel/OuterContainer/OuterControls/CloseButton")
+metadata/_custom_type_script = "uid://cq2qi7hiksda6"
+
+[node name="Panel" type="Panel" parent="InputBindings" unique_id=1230251625]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OuterContainer" type="VBoxContainer" parent="InputBindings/Panel" unique_id=807707959]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+
+[node name="Label" type="Label" parent="InputBindings/Panel/OuterContainer" unique_id=897916723]
+layout_mode = 2
+text = "Input Bindings"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="InputBindings/Panel/OuterContainer" unique_id=1098905876]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="InputControls" type="VBoxContainer" parent="InputBindings/Panel/OuterContainer/ScrollContainer" unique_id=1418753107]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="Binding" type="HBoxContainer" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls" unique_id=1923959136]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls/Binding" unique_id=1837165203]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Left:"
+horizontal_alignment = 2
+
+[node name="Spacer" type="Control" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls/Binding" unique_id=253517407]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+
+[node name="InputKey" type="Button" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls/Binding" unique_id=1912637212]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "W"
+
+[node name="EndSpacer" type="Control" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls/Binding" unique_id=1954276578]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="OuterControls" type="HBoxContainer" parent="InputBindings/Panel/OuterContainer" unique_id=1071024415]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="InputBindings/Panel/OuterContainer/OuterControls" unique_id=1410626169]
+layout_mode = 2
+text = "Finish and Close"
+
+[connection signal="value_changed" from="Main/Backdrop/OuterContainer/SettingControls/Difficulty/HSlider" to="Main/Backdrop/OuterContainer/SettingControls/Difficulty/Value" method="update_label_text"]
