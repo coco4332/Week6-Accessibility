@@ -18,7 +18,9 @@ signal music_volume_changed(new_vol: float)
 @export var _music_volume: float = 1
 @export var _sfx_ui_tick: AudioStream = null
 @export var _sfx_ui_select: AudioStream = null
+@export var _sfx_music: AudioStream = null
 var _ui_audio_player: AudioStreamPlayer = null
+var _music_audio_player: AudioStreamPlayer = null
 
 var difficulty_level: Difficulty = Difficulty.NORMAL:
 	get: return _difficulty_level
@@ -44,6 +46,10 @@ func _init() -> void: instance = self
 func _ready() -> void:
 	_ui_audio_player = AudioStreamPlayer.new()
 	add_child(_ui_audio_player)
+	_music_audio_player = AudioStreamPlayer.new()
+	add_child(_music_audio_player)
+	_music_audio_player.stream = _sfx_music
+	_music_audio_player.play()
 	
 	difficulty_changed.connect(_on_difficulty_changed)
 	master_volume_changed.connect(_on_master_volume_changed)
@@ -57,13 +63,15 @@ func _on_difficulty_changed(val: Difficulty) -> void:
 	Game.audio_menu_tick()
 
 func _on_master_volume_changed(val: float):
-	Game.audio_menu_tick()
 	_ui_audio_player.volume_linear = val
+	Game.audio_menu_tick()
 
 func _on_music_volume_changed(val: float):
+	_music_audio_player.volume_linear = val
 	Game.audio_menu_tick()
 
 func audio_menu_tick() -> void:
+	if _ui_audio_player.playing: return
 	_ui_audio_player.stop()
 	_ui_audio_player.stream = _sfx_ui_tick
 	_ui_audio_player.play()
