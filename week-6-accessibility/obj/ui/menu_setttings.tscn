@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dw0kgujospif6" path="res://src/ui/difficulty_label.gd" id="1_ce0xg"]
 [ext_resource type="Script" uid="uid://exj6e0kef6un" path="res://src/ui/settings.gd" id="1_jdtyy"]
 
-[node name="Setttings" type="Control" unique_id=1883133672]
+[node name="Setttings" type="Control" unique_id=1883133672 node_paths=PackedStringArray("difficulty_slider", "master_vol_slider", "music_vol_slider")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jdtyy")
+difficulty_slider = NodePath("Backdrop/OuterContainer/SettingControls/Difficulty/HSlider")
+master_vol_slider = NodePath("Backdrop/OuterContainer/SettingControls/MasterVolume/HSlider")
+music_vol_slider = NodePath("Backdrop/OuterContainer/SettingControls/MusicVolume/HSlider")
 metadata/_custom_type_script = "uid://exj6e0kef6un"
 
 [node name="Backdrop" type="Panel" parent="." unique_id=148997938]
