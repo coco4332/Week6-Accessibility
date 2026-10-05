@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dw0kgujospif6" path="res://src/ui/difficulty_label.gd" id="1_ce0xg"]
 [ext_resource type="Script" uid="uid://exj6e0kef6un" path="res://src/ui/settings.gd" id="1_jdtyy"]
+[ext_resource type="Theme" uid="uid://bki2k4badj7yq" path="res://obj/main_theme.tres" id="1_um2y2"]
 [ext_resource type="Script" uid="uid://cy0mxu1j2a6cx" path="res://src/ui/submenu_button.gd" id="3_6kawi"]
 [ext_resource type="Script" uid="uid://cuni54bwj62qj" path="res://src/ui/input_bindings.gd" id="4_it18t"]
 [ext_resource type="Script" uid="uid://bahllducjarra" path="res://src/ui/input_binding.gd" id="5_2n160"]
@@ -14,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_um2y2")
 
 [node name="Main" type="Control" parent="." unique_id=824564387 node_paths=PackedStringArray("difficulty_slider", "master_vol_slider", "music_vol_slider", "close_button")]
 layout_mode = 1
@@ -144,6 +146,7 @@ layout_mode = 2
 text = "Finish and Close"
 
 [node name="InputBindings" type="Control" parent="." unique_id=1215993759 node_paths=PackedStringArray("control_blueprint", "close_button")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -241,6 +244,7 @@ layout_mode = 2
 text = "Finish and Close"
 
 [node name="ListenForInput" type="Control" parent="." unique_id=329420070 node_paths=PackedStringArray("parent_menu")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -274,7 +278,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
-text = "Pres Any Button..."
+text = "Press Any Button..."
 horizontal_alignment = 1
 vertical_alignment = 1
 
