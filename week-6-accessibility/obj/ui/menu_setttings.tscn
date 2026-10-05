@@ -146,7 +146,6 @@ layout_mode = 2
 text = "Finish and Close"
 
 [node name="InputBindings" type="Control" parent="." unique_id=1215993759 node_paths=PackedStringArray("control_blueprint", "close_button")]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -218,8 +217,8 @@ custom_minimum_size = Vector2(25, 0)
 layout_mode = 2
 
 [node name="InputKey" type="Button" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls/Binding" unique_id=1683931251 node_paths=PackedStringArray("parent_menu", "submenu")]
-custom_minimum_size = Vector2(100, 50)
-custom_maximum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(125, 50)
+custom_maximum_size = Vector2(125, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -232,7 +231,7 @@ submenu = NodePath("../../../../../../../ListenForInput")
 metadata/_custom_type_script = "uid://cy0mxu1j2a6cx"
 
 [node name="EndSpacer" type="Control" parent="InputBindings/Panel/OuterContainer/ScrollContainer/InputControls/Binding" unique_id=1954276578]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 
 [node name="OuterControls" type="HBoxContainer" parent="InputBindings/Panel/OuterContainer" unique_id=1071024415]

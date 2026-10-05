@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c40qvfdu366aq" path="res://content/gfx/Standart Button Normal 1.png" id="2_ctb34"]
 [ext_resource type="Texture2D" uid="uid://eq2hxemo7wd" path="res://content/gfx/Standart Button Active 1.png" id="4_uldgl"]
 [ext_resource type="Texture2D" uid="uid://c4itreopa8cmg" path="res://content/gfx/grabber.png" id="5_r2tr5"]
-[ext_resource type="Texture2D" uid="uid://cbhv4d76v51mm" path="res://content/gfx/Item 2.png" id="6_1hbdl"]
 [ext_resource type="Texture2D" uid="uid://8rokxu8wu2vq" path="res://content/gfx/Background Static.png" id="6_uldgl"]
 [ext_resource type="Texture2D" uid="uid://4tjskgaduid0" path="res://content/gfx/Background Bar.png" id="7_7ywdr"]
 
@@ -97,9 +96,18 @@ texture_margin_right = 12.0
 texture_margin_bottom = 12.0
 region_rect = Rect2(0, 0, 121, 37)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m4w8e"]
+bg_color = Color(0, 0, 0, 0.2509804)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
 [resource]
 default_font_size = 10
-Button/constants/outline_size = 9
+Button/constants/outline_size = 6
 Button/font_sizes/font_size = 16
 Button/styles/disabled = SubResource("StyleBoxTexture_k2fuf")
 Button/styles/focus = SubResource("StyleBoxTexture_uldgl")
@@ -107,7 +115,7 @@ Button/styles/hover = SubResource("StyleBoxTexture_k0jol")
 Button/styles/normal = SubResource("StyleBoxTexture_500kr")
 Button/styles/pressed = SubResource("StyleBoxTexture_cncyh")
 HSlider/icons/grabber = ExtResource("5_r2tr5")
-HSlider/icons/grabber_disabled = ExtResource("6_1hbdl")
+HSlider/icons/grabber_disabled = ExtResource("5_r2tr5")
 HSlider/icons/grabber_highlight = ExtResource("5_r2tr5")
 HSlider/styles/grabber_area = SubResource("StyleBoxTexture_7ywdr")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_r2tr5")
@@ -117,3 +125,4 @@ Label/font_sizes/font_size = 16
 Panel/styles/panel = SubResource("StyleBoxTexture_ioyp8")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_aj1fq")
 ProgressBar/styles/fill = SubResource("StyleBoxTexture_m4w8e")
+ScrollContainer/styles/panel = SubResource("StyleBoxFlat_m4w8e")
