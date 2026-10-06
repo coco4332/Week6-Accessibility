@@ -2,8 +2,11 @@
 
 [ext_resource type="Theme" uid="uid://bki2k4badj7yq" path="res://obj/main_theme.tres" id="1_lqqkx"]
 [ext_resource type="Texture2D" uid="uid://dc75m5k10ogf8" path="res://content/main-menu-artwork-from-my-pixel-art-game-v0-cjZpYmQ5dHZrc2pkMQQN4zfAAMMwKM96fdP_bl05qrffvCK8Qzq4NlzCzpZ8.webp" id="2_841yp"]
+[ext_resource type="Script" uid="uid://fa711srnh6ae" path="res://src/ui/menu_start.gd" id="2_lwe3o"]
+[ext_resource type="Script" uid="uid://cy0mxu1j2a6cx" path="res://src/ui/submenu_button.gd" id="4_0icg3"]
+[ext_resource type="PackedScene" uid="uid://6apofyulx41d" path="res://obj/ui/menu_setttings.tscn" id="5_hmxho"]
 
-[node name="Start" type="Control" unique_id=22247024]
+[node name="Menu" type="Control" unique_id=22247024 node_paths=PackedStringArray("start_button", "quit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,40 +14,58 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lqqkx")
+script = ExtResource("2_lwe3o")
+start_button = NodePath("TextureRect/VBoxContainer/Play")
+quit_button = NodePath("TextureRect/VBoxContainer/Quit")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=573937724]
-visible = false
-scale = Vector2(1.8000001, 1.8000002)
+[node name="TextureRect" type="TextureRect" parent="." unique_id=35160272]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_841yp")
-centered = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1438222219]
-layout_mode = 0
-offset_left = 847.0
-offset_top = 427.0
-offset_right = 1135.0
-offset_bottom = 621.0
-alignment = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1438222219]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -457.0
+offset_top = -194.0
+grow_horizontal = 0
+grow_vertical = 0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=941019191]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer3" unique_id=1856464979]
-layout_mode = 2
-text = "Play"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1019989430]
-custom_maximum_size = Vector2(100, 100)
-layout_mode = 2
-alignment = 1
-
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1288090878]
+[node name="Play" type="Button" parent="TextureRect/VBoxContainer" unique_id=1856464979]
 layout_mode = 2
 text = "Play"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=653832511]
+[node name="Settings" type="Button" parent="TextureRect/VBoxContainer" unique_id=1288090878 node_paths=PackedStringArray("parent_menu", "submenu")]
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Settings"
+script = ExtResource("4_0icg3")
+parent_menu = NodePath("../../..")
+submenu = NodePath("../../../Setttings/Main")
 
-[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2" unique_id=1060868780]
+[node name="Quit" type="Button" parent="TextureRect/VBoxContainer" unique_id=1060868780]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-text = "Play"
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"
+
+[node name="Setttings" parent="." unique_id=669599504 instance=ExtResource("5_hmxho")]
+visible = false
+layout_mode = 1
+
+[node name="Main" parent="Setttings" index="0" unique_id=824564387 node_paths=PackedStringArray("parent_menu")]
+close_on_start = true
+parent_menu = NodePath("../..")
+
+[editable path="Setttings"]

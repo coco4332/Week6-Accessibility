@@ -146,6 +146,7 @@ layout_mode = 2
 text = "Finish and Close"
 
 [node name="InputBindings" type="Control" parent="." unique_id=1215993759 node_paths=PackedStringArray("control_blueprint", "close_button")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
