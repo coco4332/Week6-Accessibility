@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bsmam134qc4ro"]
+
+[ext_resource type="Theme" uid="uid://bki2k4badj7yq" path="res://obj/main_theme.tres" id="1_lqqkx"]
+[ext_resource type="Texture2D" uid="uid://dc75m5k10ogf8" path="res://content/main-menu-artwork-from-my-pixel-art-game-v0-cjZpYmQ5dHZrc2pkMQQN4zfAAMMwKM96fdP_bl05qrffvCK8Qzq4NlzCzpZ8.webp" id="2_841yp"]
+
+[node name="Start" type="Control" unique_id=22247024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lqqkx")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=573937724]
+visible = false
+scale = Vector2(1.8000001, 1.8000002)
+texture = ExtResource("2_841yp")
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1438222219]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 427.0
+offset_right = 1135.0
+offset_bottom = 621.0
+alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=941019191]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer3" unique_id=1856464979]
+layout_mode = 2
+text = "Play"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=1019989430]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1288090878]
+layout_mode = 2
+text = "Play"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=653832511]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer2" unique_id=1060868780]
+layout_mode = 2
+text = "Play"
