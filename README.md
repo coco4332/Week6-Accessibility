@@ -2,6 +2,11 @@
 
 This project is meant to be a reusable main menu and other common menu UIs you see in games, that you can just add to your own project so you don't have to remake the same boilerplate menu every time
 
+Figma wireframe link:  
+https://www.figma.com/board/1rqtVUw2zqXFbUeZqL3P8I/GameUI?node-id=13-133&t=BldT56Iuwi79HhSL-0
+
+![wireframe screenshot](./figma_scrshot.png)
+
 ## Credits:
 
 * UI Graphics - [By Wenrexa](https://opengameart.org/content/assets-free-interface-ui-dark-miko)  
