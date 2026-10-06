@@ -7,6 +7,19 @@ https://www.figma.com/board/1rqtVUw2zqXFbUeZqL3P8I/GameUI?node-id=13-133&t=BldT5
 
 ![wireframe screenshot](./figma_scrshot.png)
 
+## Time constraints:
+
+* Wireframe - we were able to complete the wireframe in class, in about 1.5 hours.
+* Settings Menu UI and theme - This took about 6 hours to implement and polish
+    * Main settings menu ~ 2 hr
+        * Layout ~ 1 hr
+        * Volume controls ~ 1 hr
+    * Key binding submenu ~ 3 hr
+        * Procedural generation of ui elements based on project input map ~ 1 hr
+        * Listen to input/Rebind mechanic ~ 1 hr
+        * Layouts ~ 1hr
+    * Theme/sfx ~ 1 hr
+
 ## Credits:
 
 * UI Graphics - [By Wenrexa](https://opengameart.org/content/assets-free-interface-ui-dark-miko)  
