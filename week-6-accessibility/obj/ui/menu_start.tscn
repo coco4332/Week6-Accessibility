@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cy0mxu1j2a6cx" path="res://src/ui/submenu_button.gd" id="4_0icg3"]
 [ext_resource type="PackedScene" uid="uid://6apofyulx41d" path="res://obj/ui/menu_setttings.tscn" id="5_hmxho"]
 
-[node name="Menu" type="Control" unique_id=22247024 node_paths=PackedStringArray("start_button", "quit_button")]
+[node name="Start" type="Control" unique_id=22247024]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,11 +14,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lqqkx")
-script = ExtResource("2_lwe3o")
-start_button = NodePath("TextureRect/VBoxContainer/Play")
-quit_button = NodePath("TextureRect/VBoxContainer/Quit")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=35160272]
+[node name="Background" type="TextureRect" parent="." unique_id=35160272]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -27,7 +24,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_841yp")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect" unique_id=1438222219]
+[node name="Main" type="Control" parent="." unique_id=212094869 node_paths=PackedStringArray("start_button", "quit_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_lwe3o")
+start_button = NodePath("VBoxContainer/Play")
+quit_button = NodePath("VBoxContainer/Quit")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1438222219]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -39,21 +47,21 @@ offset_top = -194.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Play" type="Button" parent="TextureRect/VBoxContainer" unique_id=1856464979]
+[node name="Play" type="Button" parent="Main/VBoxContainer" unique_id=1856464979]
 layout_mode = 2
 text = "Play"
 
-[node name="Settings" type="Button" parent="TextureRect/VBoxContainer" unique_id=1288090878 node_paths=PackedStringArray("parent_menu", "submenu")]
+[node name="Settings" type="Button" parent="Main/VBoxContainer" unique_id=1288090878 node_paths=PackedStringArray("parent_menu", "submenu")]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Settings"
 script = ExtResource("4_0icg3")
-parent_menu = NodePath("../../..")
+parent_menu = NodePath("../..")
 submenu = NodePath("../../../Setttings/Main")
 
-[node name="Quit" type="Button" parent="TextureRect/VBoxContainer" unique_id=1060868780]
+[node name="Quit" type="Button" parent="Main/VBoxContainer" unique_id=1060868780]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -63,9 +71,28 @@ text = "Quit"
 [node name="Setttings" parent="." unique_id=669599504 instance=ExtResource("5_hmxho")]
 visible = false
 layout_mode = 1
+mouse_filter = 2
 
 [node name="Main" parent="Setttings" index="0" unique_id=824564387 node_paths=PackedStringArray("parent_menu")]
 close_on_start = true
 parent_menu = NodePath("../..")
+
+[node name="GameTitle" type="Label" parent="." unique_id=352128394]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -417.0
+offset_top = -70.5
+offset_right = -42.0
+offset_bottom = 70.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Amazing Game 
+Title"
+horizontal_alignment = 1
 
 [editable path="Setttings"]
