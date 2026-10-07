@@ -19,6 +19,8 @@ https://www.figma.com/board/1rqtVUw2zqXFbUeZqL3P8I/GameUI?node-id=13-133&t=BldT5
         * Listen to input/Rebind mechanic ~ 1 hr
         * Layouts ~ 1hr
     * Theme/sfx ~ 1 hr
+ * Start Menu ~ 2 hr
+ * Escape Menu ~ 2 hr
 
 ## Credits:
 
