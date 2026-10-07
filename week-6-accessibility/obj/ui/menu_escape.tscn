@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://b03xcey0fa28g"]
+
+[ext_resource type="Theme" uid="uid://bki2k4badj7yq" path="res://obj/main_theme.tres" id="1_54fnl"]
+[ext_resource type="Script" uid="uid://b7jiucyvo0pp" path="res://menu_escape.gd" id="2_4et2q"]
+[ext_resource type="Script" uid="uid://cy0mxu1j2a6cx" path="res://src/ui/submenu_button.gd" id="3_c82vp"]
+[ext_resource type="PackedScene" uid="uid://6apofyulx41d" path="res://obj/ui/menu_setttings.tscn" id="4_km8b5"]
+
+[node name="Escape" type="Control" unique_id=221313602]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_54fnl")
+
+[node name="Main" type="Control" parent="." unique_id=237957784 node_paths=PackedStringArray("resume_button", "quit_menu_button")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.0
+offset_top = -158.0
+offset_right = 118.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_4et2q")
+resume_button = NodePath("VBoxContainer/Resume")
+quit_menu_button = NodePath("VBoxContainer/Quit To Menu")
+
+[node name="Panel" type="Panel" parent="Main" unique_id=959284448]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=370690296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = -74.5
+offset_right = 76.5
+offset_bottom = 74.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Main/VBoxContainer" unique_id=238425906]
+layout_mode = 2
+text = "Resume"
+
+[node name="Settings" type="Button" parent="Main/VBoxContainer" unique_id=353975619 node_paths=PackedStringArray("parent_menu", "submenu")]
+layout_mode = 2
+text = "Settings"
+script = ExtResource("3_c82vp")
+parent_menu = NodePath("../..")
+submenu = NodePath("../../../Setttings/Main")
+
+[node name="Quit To Menu" type="Button" parent="Main/VBoxContainer" unique_id=368072014]
+layout_mode = 2
+text = "Quit To Menu"
+
+[node name="Label" type="Label" parent="Main" unique_id=1808837138]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.5
+offset_right = 28.5
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Paused"
+
+[node name="Setttings" parent="." unique_id=669599504 instance=ExtResource("4_km8b5")]
+visible = false
+layout_mode = 1
+mouse_filter = 2
+
+[node name="Main" parent="Setttings" index="0" unique_id=824564387]
+close_on_start = true
+
+[editable path="Setttings"]
