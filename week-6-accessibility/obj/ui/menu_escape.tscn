@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6apofyulx41d" path="res://obj/ui/menu_setttings.tscn" id="4_km8b5"]
 
 [node name="Escape" type="Control" unique_id=221313602]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,21 +57,18 @@ grow_vertical = 2
 
 [node name="Resume" type="Button" parent="Main/VBoxContainer" unique_id=238425906]
 layout_mode = 2
-text = "Resume
-"
+text = "Resume"
 
 [node name="Settings" type="Button" parent="Main/VBoxContainer" unique_id=353975619 node_paths=PackedStringArray("parent_menu", "submenu")]
 layout_mode = 2
-text = "Settings
-"
+text = "Settings"
 script = ExtResource("3_c82vp")
 parent_menu = NodePath("../..")
 submenu = NodePath("../../../Setttings/Main")
 
 [node name="Quit To Menu" type="Button" parent="Main/VBoxContainer" unique_id=368072014]
 layout_mode = 2
-text = "Quit To Menu
-"
+text = "Quit To Menu"
 
 [node name="Label" type="Label" parent="Main" unique_id=1808837138]
 layout_mode = 1
